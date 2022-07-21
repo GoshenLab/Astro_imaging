@@ -105,6 +105,10 @@ for i = 1 : length(file_names)
     
     scaled_centroids_dist = pdist2(scaled_centroids, scaled_centroids);
     tri_extract = tril(true(length(scaled_centroids_dist)),-1);
+    ot_1_ind = [(mask_struct(curr_ind).ot_000_ROI_num+1), length(event_mat_corr)];
+    ot_0_ind = [1 ,(mask_struct(curr_ind).ot_000_ROI_num)];
+    tri_extract(ot_1_ind(1): ot_1_ind(2), ot_0_ind(1):ot_0_ind(2)) = 0;
+
     scaled_centroids_dist = scaled_centroids_dist(tri_extract);
     curr_event_mat_corr = event_mat_corr(tri_extract);
 
