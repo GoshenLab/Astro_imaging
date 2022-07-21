@@ -108,18 +108,6 @@ for i = 1 : length(file_names)
     scaled_centroids_dist = scaled_centroids_dist(tri_extract);
     curr_event_mat_corr = event_mat_corr(tri_extract);
 
-    %% single mice (not shown in paper) 
-%     subplot(1,2,2)
-%     scatter(scaled_centroids_dist, curr_event_mat_corr, 'o',...
-%         'filled', 'MarkerFaceAlpha', 0.5);
-%     hold on;
-%     % event prob vs. scaled distance
-%     create_graphs_discrete_X(scaled_centroids_dist,...
-%         0 : dist_bin_um : FOV_size(1),...
-%         curr_event_mat_corr)
-%     
-%     xlabel('distance (um)')
-%     ylabel('event correlation')
     
 
 
